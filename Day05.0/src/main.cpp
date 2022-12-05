@@ -65,7 +65,6 @@ int main()
         std::cout << std::endl;
 
         // PART 2
-        //std::array<std::stack<char>, 9> crate_stack2;
         init_crate_stacks(crate_stack);
         for (auto&& cur_inst : move_instructions)
         {
