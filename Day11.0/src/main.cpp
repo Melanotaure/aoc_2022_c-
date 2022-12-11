@@ -135,7 +135,7 @@ int main()
         }
     }
 
-    // Part 1
+    // Part 2
     std::cout << "PART 2" << std::endl;
     std::list<uint64_t> inspections;
     for (auto&& m : monkeys)

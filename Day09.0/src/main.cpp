@@ -10,7 +10,7 @@
 
 #define input_file_name ("inputs.txt")
 
-    std::map<std::pair<int32_t, int32_t>, uint32_t> positions;
+std::map<std::pair<int32_t, int32_t>, uint32_t> positions;
 void move_head_tail(char dir, int32_t& hx, int32_t& hy, int32_t& tx, int32_t& ty, uint32_t dep);
 
 int main()
