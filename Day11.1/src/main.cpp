@@ -10,7 +10,7 @@
 
 #define input_file_name ("inputs.txt")
 
-constexpr uint32_t ROUND_MAX = 20;
+constexpr uint32_t ROUND_MAX = 10000;
 
 struct Monkey
 {
@@ -33,6 +33,7 @@ struct Monkey
             if (operation == '*') current_item = current_item * used_value;
             else if (operation == '+') current_item = current_item + used_value;
             items.front() = current_item;
+            //inspections++;
         }
     };
 
@@ -113,6 +114,12 @@ int main()
     monkeys[7]->items.push_back(82);
     monkeys[7]->items.push_back(65);
 
+    uint64_t modulo = 1;
+    for (auto&& m : monkeys)
+    {
+        modulo *= m->div;
+    }
+
     for (auto round = 0; round < ROUND_MAX; round++)
     {
         for (auto&& m : monkeys)
@@ -121,14 +128,14 @@ int main()
             for (auto it = 0; it < nb_items; it++)
             {
                 m->worriness();
-                auto res = m->test(0);
+                auto res = m->test(modulo);
                 if (res.second != -1) monkeys[res.second]->items.push_back(res.first);
             }
         }
     }
 
-    // Part 1
-    std::cout << "PART 1" << std::endl;
+    // Part 2
+    std::cout << "PART 2" << std::endl;
     std::list<uint64_t> inspections;
     for (auto&& m : monkeys)
     {
