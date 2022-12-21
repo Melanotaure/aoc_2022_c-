@@ -75,7 +75,6 @@ int main()
         val_to_idx[i].second = idx;
     }
     // Part 1
-    std::cout << "size: " << val_to_idx.size() << std::endl;
     std::cout << "PART 1" << std::endl;
     auto idx1 = ((val_to_idx[zero].second + 1000) % val_to_idx.size());
     auto idx2 = ((val_to_idx[zero].second + 2000) % val_to_idx.size());
@@ -89,9 +88,6 @@ int main()
         }
     }
     std::cout << "Result: " << result << std::endl;
-    // Part 2
-//    std::cout << "PART 2" << std::endl;
-//    std::cout << "Result: " << max << std::endl;
 
     return 0;
 }
